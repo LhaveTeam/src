@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* ============================================================
+ * LHUI - Global color 全局常用颜色定义 在需要的页面直接引入
+ * 在需要的scss中以引用；不会产生多余的代码
+============================================================ */
+$baseFontColor: #333;
+$baseBackgroundColor:white;
+$bodyBackgroundColor:#f5f4f7;
+$baseActiveColorMain:#6dade8;
+$baseActiveColorSecond:#ff4545;
+$baseActiveColorThird:#cd5959;
+$basrListFooterBgFirst:#e6e6e6;
+$basrListFooterBgSecond:#f4a85d;
+$baseListRedBg:#e52b2b;
+$baseListOrangeBg:#f4a85d;
+$baseListBuleBg:#6dade8;

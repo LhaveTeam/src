@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* ============================================================
+ * LHUI - Global components class 全局基本常用类 每个页面最多引入一次
+ * 否则会产生多余代码，导致页面出现位置异常
+============================================================ */
+.u-btn{ display: inline-block; padding: 0 pxToRem(20px); border: none; border-radius: pxToRem(5px); color: #fff; font-size: pxToRem(24px); line-height: 1.5; }
+.m-bg-red{ background-color: #cd5959; }
+.m-bg-blue{  background-color: #417dc0; }

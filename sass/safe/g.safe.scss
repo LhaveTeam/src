@@ -3,6 +3,7 @@
  * [safe] 安全模块 公共
  * 
 ============================================================ */
+@import "../module/module.scss";
 @import "g_safe_src/safe.leaders.scss";//上级部门
 @import "g_safe_src/safe.check.scss";//审核
 @import "g_safe_src/safe.public.scss";//发布

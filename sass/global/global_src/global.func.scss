@@ -4,8 +4,23 @@
  * 可以在需要的页面直接引入，调用对应的函数即可进行对应的计算
  * 可在需要的scss中引用 不会产生多余的代码
 ============================================================ */
-//px转换成rem
+/* 
+ *可将px转换成rem
+ * @param {Number} $px 传入px值 如20px
+ * @return 返回对应的rem值；帯单位rem
+ *
+  */
+@import "global.size.scss";
 @function pxToRem($px){
 	@return $px/$htmlFontSize*1rem;	
 	
+}
+/* 
+ *可将px转换成百分比，一般用于布局的百分比转换
+ * @param {Number} $px 传入px值 如20px
+ *@return 返回对应的百分比值；如20%
+ * 
+  */
+@function percent($px){
+	@return ($px/$designWidth)*100+%;
 }

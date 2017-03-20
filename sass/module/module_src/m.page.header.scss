@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* ============================================================
+ * [MODULE]  头部标题模块scss 
+ * 
+ * 
+============================================================ */
+@import "../../global/global_src/global.func.scss";
+.jt-m-page-header-bar{
+	height: pxToRem(88px) ;
+	padding-left: pxToRem(15px);
+	padding-right: pxToRem(15px);
+	background-color: #3681D0;
+	.m-action-back{
+		padding-top: pxToRem(10px);
+		padding-bottom: pxToRem(10px);
+		line-height: pxToRem(68px) ;
+		font-size: pxToRem(40px);
+		color: #fff;
+		
+	}
+	.m-page-hd-tit{line-height: pxToRem(88px) ; font-size: pxToRem(34px); color: #fff; }
+	.m{width: percent(750px)}
+	
+}

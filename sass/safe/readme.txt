@@ -1,2 +1,3 @@
-﻿此文件夹存放safe功能下的scss ；在安全模块中使用，在编写安全模块时，建议引用safe.css即可，safe.scss编译后
-会自动在build中创建一个safe.css 文件，在对应的html中直接引用safe.css即可
+﻿此文件夹存放safe功能下的scss ；在安全模块中使用，在编写安全模块时，对对应的sass进行编写，对应的scss编译后
+会自动在build中创建对应的css 文件，在对应的html中直接引用g.safe.css和对应的版本的css即可；
+其中：以a开头的为黄人版；以b开头的为蓝人版；以c开头的为绿人版

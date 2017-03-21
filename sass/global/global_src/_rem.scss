@@ -1,0 +1,27 @@
+// ------------------------------------------------------------
+// Base: Rem
+// ------------------------------------------------------------
+//以设计稿宽度为基础，计算出每一种宽度的字体大小
+html {
+	font-size: $baseRootFontSize;
+}
+@for $i from 1 through length($bps) {
+	$item: nth($bps, $i);
+	$fontSize: ($item / $baseRootWidth * $baseRootFontSize);
+	
+	
+	@if $i == 1 and $item == 375 {
+		@include max-screen($item - 1) {
+			html {
+				font-size: $fontSize;
+			}
+		}
+	}
+	
+	
+	@include min-screen($item) {
+		html {
+			font-size: $fontSize;
+		}
+	}
+}

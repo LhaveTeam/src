@@ -1,0 +1,13 @@
+$baseDesignWidth: 750px !default; //设计稿宽度
+$baseRootWidth: ($baseDesignWidth / 2) !default;
+$baseRootFontSize: ($baseRootWidth / 10) !default; //根字体大小
+$bps: (384px, 400px, 414px, 424px, 480px);
+
+$line-height-base: 1.5 !default;
+
+$color-white: #ffffff !default;
+$color-black: #000000 !default;
+$color-gray-dark: #333333 !default;
+
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-size-base: 12px !default;

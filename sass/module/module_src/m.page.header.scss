@@ -4,21 +4,22 @@
  * 
  * 
 ============================================================ */
-@import "../../global/global_src/global.func.scss";
+@import "../../global/global_src/_variables.scss";
+@import "../../global/global_src/_function.scss";
 .jt-m-page-header-bar{
-	height: pxToRem(88px) ;
-	padding-left: pxToRem(15px);
-	padding-right: pxToRem(15px);
+	height: pxTorem(44) ;
+	padding-left: pxTorem(7.5);
+	padding-right: pxTorem(7.5);
 	background-color: #3681D0;
 	.m-action-back{
-		padding-top: pxToRem(10px);
-		padding-bottom: pxToRem(10px);
-		line-height: pxToRem(68px) ;
-		font-size: pxToRem(40px);
+		padding-top: pxTorem(5);
+		padding-bottom: pxTorem(5);
+		line-height: pxTorem(34) ;
+		font-size: pxTorem(20);
 		color: #fff;
 		
 	}
-	.m-page-hd-tit{line-height: pxToRem(88px) ; font-size: pxToRem(34px); color: #fff; }
-	.m{width: percent(750px)}
+	.m-page-hd-tit{line-height: pxTorem(44) ; font-size: pxTorem(17); color: #fff; }
+	
 	
 }

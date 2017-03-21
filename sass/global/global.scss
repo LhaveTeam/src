@@ -6,11 +6,12 @@
  * 
 ============================================================ */
 @import "global_src/golbal.fontstyle.scss";//全局字体
+@import "global_src/_variables.scss";//全局字体
 @import "global_src/global.size.scss";//全局尺寸
 @import "global_src/global.colors.scss";//全局颜色
-@import "global_src/global.func.scss";//全局函数
+@import "global_src/_function.scss";//全局函数
 @import "global_src/golbal.fontstyle.scss";//全局字体样式
-@import "global_src/global.mediaquery.scss";//全局媒体查询
+@import "global_src/_rem.scss";//全局媒体查询
 @import "global_src/global.grid.scss";//全局 栅格
 @import "global_src/global.base.scss";//全局基本常用类
 @import "global_src/global.plugins.scss";//全局插件

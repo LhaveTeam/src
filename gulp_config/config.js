@@ -33,6 +33,10 @@ module.exports = {
 		index_source:[
 			__src +'/sass/index/index.scss'//index scss
 		],
+		sassoptions:{
+			outputStyle:'compressde',
+			precision: 8
+		},
 		index_file:'index.css',
 		comn_safe_source:[
 			__src +'/sass/safe/g.safe.scss'//安全公共功能scss

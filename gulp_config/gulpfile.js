@@ -24,7 +24,7 @@ gulp.task('clean-css', function() {
 gulp.task('concatcss-general', function() {
     return gulp.src($CFG_STYLES.general_source)
     .pipe(Plugins.changed($CFG_STYLES.dest))
-    .pipe(gulp_sass())
+    .pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.general_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
@@ -35,7 +35,7 @@ gulp.task('concatcss-general', function() {
 gulp.task('concatcss-index', function() {
     return gulp.src($CFG_STYLES.index_source)
     .pipe(Plugins.changed($CFG_STYLES.dest))
-    .pipe(gulp_sass())
+    .pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.index_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
@@ -47,7 +47,7 @@ gulp.task('concatcss-index', function() {
 gulp.task('concatscss-comn_safe',function(){
 	return gulp.src($CFG_STYLES.comn_safe_source)
 	.pipe(Plugins.changed($CFG_STYLES.dest))
-	.pipe(gulp_sass())
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.comn_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
@@ -60,7 +60,7 @@ gulp.task('concatscss-comn_safe',function(){
 gulp.task('concatscss-a_safe',function(){
 	return gulp.src($CFG_STYLES.a_safe_source)
 	.pipe(Plugins.changed($CFG_STYLES.dest))
-	.pipe(gulp_sass())
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.a_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
@@ -73,7 +73,7 @@ gulp.task('concatscss-a_safe',function(){
 gulp.task('concatscss-b_safe',function(){
 	return gulp.src($CFG_STYLES.b_safe_source)
 	.pipe(Plugins.changed($CFG_STYLES.dest))
-	.pipe(gulp_sass())
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.b_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
@@ -86,7 +86,7 @@ gulp.task('concatscss-b_safe',function(){
 gulp.task('concatscss-c_safe',function(){
 	return gulp.src($CFG_STYLES.c_safe_source)
 	.pipe(Plugins.changed($CFG_STYLES.dest))
-	.pipe(gulp_sass())
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
 	.pipe(Plugins.concat($CFG_STYLES.c_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))

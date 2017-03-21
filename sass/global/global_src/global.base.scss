@@ -8,7 +8,7 @@
 .jt-scroll-wrapper{ background-color: $baseBackgroundColor; }
 .jt-scroll-wrapper.mui-segmented-control{ background-color:none; }
 .jt-global-body .mui-table-view{ width: $mainPageWidth; margin: 0 auto; }
-.jt-page-main-content{padding-top: pxToRem(88px)!important; }
+.jt-page-main-content{padding-top: pxTorem(44)!important; }
 .fn-ofh {//超出隐藏
 	overflow: hidden !important;
 }

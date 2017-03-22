@@ -23,21 +23,85 @@
     <script id="seajsnode" src="js/sea.js"></script>
     <script src="js/general.config.js"></script>
   </head>
-  <body class="global-body jt-global-body">
+
+  <body class="global-body jt-global-body jt-grey-bg">
     <header class="mui-bar mui-bar-nav jt-m-page-header-bar">
-        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left m-action-back"></a>
-        <h1 class="mui-title m-page-hd-tit">巡检计划</h1>
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left m-action-back"></a>
+      <h1 class="mui-title m-page-hd-tit">巡检计划</h1>
     </header>
     <div class="mui-content jt-page-main-content">
-        
-        
+      <div class="m-form-panel">
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="mui-navigate-right sel-slide-box">
+                <i class="mui-icon m-sel-icon b-safe-plan-sel-person-icon"></i>
+                <span class="center-text">选择发布对象</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <div class="title-box"><span class="tit-cont">标题：</span></div>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <div class="input-group">
+                <input type="text" class="input-tit" placeholder="请输入标题" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="title-box"><span class="tit-cont">发表内容：</span></div>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <div class="textarea-group">
+                <textarea name="" class="textarea-input" placeholder="编辑发表内容"></textarea>
+              </div>
+              <div id="image-list" class="row image-list">
+                <div class="image-item">
+                  <div class="image-close">X</div><input type="file" accept="image/*" id="image-1"></div>
+                  <div class="image-item">
+                  <div class="image-close">X</div><input type="file" accept="image/*" id="image-1"></div>
+                  <div class="image-item">
+                  <div class="image-close">X</div><input type="file" accept="image/*" id="image-1"></div>
+                <div class="image-item space">
+                  <div class="image-close">X</div><input type="file" accept="image/*" id="image-1"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="title-box"><span class="tit-cont">设定巡检周期：</span></div>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="sel-slide-box">
+                <i class="mui-icon m-sel-icon b-safe-plan-sel-person-icon"></i>
+                <span class="center-text">选择开始日期</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="mui-table-view m-list-witharrow mt-20">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="sel-slide-box">
+                <i class="mui-icon m-sel-icon b-safe-plan-sel-person-icon"></i>
+                <span class="center-text">选择结束日期</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
     </div>
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access],function(){
+    seajs.use([$app.scriptDir + $app.access], function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });
     });
   </script>
+
 </html>

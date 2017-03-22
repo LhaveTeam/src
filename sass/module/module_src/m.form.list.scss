@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* ============================================================
+ * [MODULE]  表单页面panel 
+ * 
+ * 
+============================================================ */
+.m-form-panel{
+	min-height: 100%; margin-top: pxTorem(10); background-color: #F5F4F7;
+	.m-sel-icon{width: pxTorem(16); height: pxTorem(13.5); margin-right: pxTorem(10); margin-left: pxTorem(10); vertical-align: middle;}
+	.m-list-item{padding: 0;}
+	.sel-slide-box{display: flex; flex: 1; height: pxTorem(40px); align-items: center; color: #666;}
+	.m-list-form-item-tit-bd{ margin: 0 !important; padding: 0 pxTorem(7.5) !important;  background-color: white; align-items: center; font-size: pxTorem(18);
+	&:after{
+		right: pxTorem(7.5);
+		
+	}
+	}
+	.input-group{ height: pxTorem(40px); }
+	.textarea-group{ flex: 1; }
+	.textarea-input{ border: none; min-height: pxTorem(123/2); padding: pxTorem(13) 0 0;}
+	.center-text{display: flex; flex: 1; justify-content: center; margin-right: pxTorem(30); font-size: pxTorem(14);}
+	.title-box{ position: relative; height: pxTorem(50);
+		
+	}
+	.tit-cont{ display: flex; height: 100%; padding: 0 pxTorem(7.5); padding-bottom: pxTorem(5); align-items: flex-end; font-size: pxTorem(12);  line-height: pxTorem(24);  }
+	.input-group{
+		flex: 1;
+		align-items: center;
+		.input-tit{ margin: 0; padding: 0; border: none; font-size: pxTorem(16); color: #333; }
+	}
+	
+	.image-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.image-item {
+		width: 31%;
+		height: pxTorem(100);
+		background-image: url(../images/subpage/addimg_btn_bg.jpg);
+		background-size: 100% 100%;
+		display: inline-block;
+		position: relative;
+		border-radius: 2px;
+		margin-right: pxTorem(5);
+		margin-bottom: pxTorem(15);
+		border: solid 1px #e8e8e8;
+	}
+	 .image-item input[type="file"] {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 0;
+	}
+	.image-item.space {
+		border: none;
+	}
+	.image-item .image-close {
+		position: absolute;
+		display: inline-block;
+		right: 0;
+		top: 0;
+		width: pxTorem(20);
+		height: pxTorem(20);
+		text-align: center;
+		line-height: pxTorem(20);
+		border-radius: 50%;
+		background-color: #FF5053;
+		color: #f3f3f3;
+		border: solid 1px #FF5053;
+		font-size: 12px;
+		font-weight: 200;
+		z-index: 1;
+	}
+	.image-item.space .image-close {
+		display: none;
+	}
+}

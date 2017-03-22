@@ -7,8 +7,9 @@
 .global-container{ margin: 0 auto 0; width: $mainPageWidth; background-color: $baseBackgroundColor; }
 .jt-scroll-wrapper{ background-color: $baseBackgroundColor; }
 .jt-scroll-wrapper.mui-segmented-control{ background-color:none; }
-.jt-global-body .mui-table-view{ width: $mainPageWidth; margin: 0 auto; }
 .jt-page-main-content{padding-top: pxTorem(44)!important; }
+.jt-global-body{ min-height: 100%; }
+.global-html,.jt-global-body{min-height: 100%;}
 .fn-ofh {//超出隐藏
 	overflow: hidden !important;
 }

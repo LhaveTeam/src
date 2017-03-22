@@ -5,3 +5,8 @@
 ============================================================ */
 @import "../../global/global_src/_variables.scss";
 @import "../../global/global_src/_function.scss";
+.m-sel-icon{ background-size: pxTorem(438/2) pxTorem(159/2); }
+.b-safe-plan-sel-person-icon{ 
+	background-image: url(/images/subpage/b_safe_icon_sprite.png);
+	background-position: pxTorem(-10) pxTorem(-10);
+ }

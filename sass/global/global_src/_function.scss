@@ -31,7 +31,29 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
-
+//在:before或者 :after中继承使用
+%border-bottom{
+	content: ""; 
+	position: absolute;
+	right: 0; 
+	bottom: 0; 
+	left: 0; 
+	height: 1px; 
+	-webkit-transform: scaleY(.5); 
+	transform: scaleY(.5); 
+	background-color: #c8c7cc;	
+}
+%border-top{
+	content: ""; 
+	position: absolute;
+	right: 0; 
+	top: 0; 
+	left: 0; 
+	height: 1px; 
+	-webkit-transform: scaleY(.5); 
+	transform: scaleY(.5); 
+	background-color: #c8c7cc;	
+}
 //去掉一个值的单位，如12px => 12
 @function strip-units($number) {
 	@return $number / ($number * 0 + 1);

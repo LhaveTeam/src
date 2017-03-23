@@ -69,3 +69,8 @@
 	}
 	@return ($target-size / $context) * 1rem;
 }
+//计算屏幕小于375时进行调整 一般用于图片大小及边距的调整，等比缩小的情况 返回px值
+@function imgpxTorem($target-size) {
+	$rem:pxTorem($target-size);
+	@return ($rem*32/1rem)*1px;
+}

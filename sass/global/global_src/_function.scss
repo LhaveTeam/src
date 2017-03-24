@@ -74,3 +74,8 @@
 	$rem:pxTorem($target-size);
 	@return ($rem*32/1rem)*1px;
 }
+//计算百分比 基于设计稿宽度 如75px 返回 10%；
+@function percent($px){
+	@return ($px/750)*100+%;
+	
+}

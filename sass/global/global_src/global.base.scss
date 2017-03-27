@@ -55,6 +55,12 @@
     word-wrap: break-word;
     text-overflow: ellipsis;
 }
+//flex布局
+.jt-dis-flex{
+	display: flex;
+	justify-content: center;
+	
+}
 
 //边距 
 @function pxToRem2($num){

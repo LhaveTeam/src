@@ -19,7 +19,7 @@
 	.input-group{ height: pxTorem(40px); }
 	.textarea-group{ flex: 1; }
 	.textarea-input{ border: none; min-height: pxTorem(123/2); padding: pxTorem(13) 0 0;}
-	.center-text{display: flex; flex: 1; justify-content: center; margin-right: pxTorem(30); font-size: pxTorem(14);}
+	.center-text{display: flex; flex: 1; height: 100%; justify-content: center; margin-right: pxTorem(30); font-size: pxTorem(14); line-height: pxTorem(40px);}
 	.title-box{ position: relative; height: pxTorem(50);
 		
 	}
@@ -92,10 +92,46 @@
 		display: none;
 	}
 	
+
 	.m-sel-time-icon{ height: pxTorem(18) ; background-position: pxTorem(-10) pxTorem(-179/2); }
-	
+
+	.m-sel-time-icon{ height: pxTorem(36/2) ; background-position: pxTorem(-10) pxTorem(-179/2); }
+	.m-sel-design-icon{ height: pxTorem(36/2) ; background-position: pxTorem(-115) pxTorem(-50.1); }
+	.proj-sel-icon{ background-position: pxTorem(-80) pxTorem(-10); height: pxTorem(15);}
+	.proj-book-icon{ background-position: pxTorem(-80) pxTorem(-51); height: pxTorem(19); }
+	.pojec-desc-box{
+		padding: pxTorem(12) pxTorem(7.5);
+		.desc-bd{ 
+			display: flex; line-height: pxTorem(22);
+			
+			}
+		.desc-l{ 
+			flex: 1;
+			>p{ 
+				margin: 0; color: #333;
+				>span{ color: #b2b2b2; font-size: pxTorem(14); }
+			}
+			
+		 }
+		.desc-r{
+			>p{ 
+				margin: 0; color: #333;
+				>strong{ font-size: pxTorem(24); color: #ff4545; font-weight: normal; }
+				>small{ font-size: pxTorem(14); color: #ff4545; }
+			
+			}
+			
+		}
+		
+	}
+
 	
 }
-.m-bottom-btn{ height: pxTorem(40); padding-top: 0; margin-top: pxTorem(85); margin-bottom: 0; padding-bottom: 0; border-radius: 0; line-height: pxTorem(40) !important; font-size: pxTorem(14)!important;
-	&:before{margin-right: pxTorem(5); }
+.m-bottom-fixed-btn-box{ position: fixed; bottom: 0; width: 100%; padding: pxTorem(7.5) 0; background-color: white;left: 0; right: 0; z-index: 10;  text-align: center; }
+.m-bottom-btn{ height: pxTorem(40); padding-top: 0;  margin-bottom: 0; padding-bottom: 0; border-radius: 0; line-height: pxTorem(40) !important; font-size: pxTorem(14)!important;
+	&:before{margin-right: pxTorem(5); font-size: pxTorem(18); }
 }
+.jt-double-btn{display: inline-block; margin:0; width: percent(350); border: none; margin: 0 pxTorem(5);}
+.jt-select-options{ height:  100%; margin: 0; padding: 0 1%; text-align: center; }
+.jt-icon-arrowdownl:before{ position: absolute; right: pxTorem(15); top: 0; line-height: pxTorem(40px); font-size: pxTorem(18); color: #bbb }
+

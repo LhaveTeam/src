@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="global-html" lang="zh-CN">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>建投APP-安全统计</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="LHVE TEAM, www.lhave.com">
+    <meta name="copyright" content="Copyright lhave.com 版权所有">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telphone=no, email=no">
+    <meta name="wap-font-scale" content="no">
+    <link href="css/assets/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/g.safe.css" rel="stylesheet" type="text/css">
+    <link href="css/b.safe.css" rel="stylesheet" type="text/css">
+    <script id="seajsnode" src="js/sea.js"></script>
+    <script src="js/general.config.js"></script>
+  </head>
+  <body class="global-body jt-global-body">
+    <header class="mui-bar mui-bar-nav jt-m-page-header-bar">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left m-action-back"></a>
+        <h1 class="mui-title m-page-hd-tit">统计</h1>
+    </header>
+    
+    <div class="mui-content jt-page-main-content">
+        
+    	<div id="safe_index_main" class="mui-slider mui-fullscreen g-slider-main">
+    		<div id="safe_index_segctrl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted g-segmented-segctrl">
+    			<div class="mui-scroll">
+    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">上报</a>
+    				<a class="mui-control-item" href="javascript:void(0);" data-wid="">下达</a>
+    				<a class="mui-control-item" href="javascript:void(0);" data-wid="">验收跟踪</a>
+    				<a class="mui-control-item" href="javascript:void(0);" data-wid="">统计</a>
+    				<a class="mui-control-item" href="javascript:void(0);" data-wid="">巡检计划</a>
+    			</div>
+    		</div>
+    	</div>//slider部分
+    	
+    </div>
+    
+    
+  </body>
+  <script>
+    seajs.use([$app.scriptDir + $app.access],function(){
+      mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      });
+    });
+  </script>
+
+</html>

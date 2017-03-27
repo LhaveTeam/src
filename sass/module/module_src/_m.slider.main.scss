@@ -1,0 +1,39 @@
+
+.g-slider-main .g-segmented-segctrl {
+	font-size: pxTorem(14);
+	&.mui-slider-indicator {
+		background-color: #ffffff;
+	}
+	
+    &.mui-scroll-wrapper {
+        height: pxTorem(60);
+        .mui-scroll {
+			margin-right: pxTorem(8);
+			margin-left: pxTorem(8);
+            height: pxTorem(58);
+        }
+        .mui-control-item {
+			padding-right: pxTorem(15);
+			padding-left: pxTorem(15);
+        }
+    }
+	
+	&.mui-segmented-control-inverted {
+		border-top: 1px solid transparent;
+		border-bottom: 1px solid #dddddd;
+        .mui-control-item {
+			line-height: pxTorem(56);
+			border-bottom: 2px solid transparent;
+			color: #333333;
+            &.mui-active {
+				border-bottom: 2px solid #0077f1;
+				color: #0077f1;
+            }
+        }
+	}
+	
+	.mui-control-item {
+		height: pxTorem(58);
+		line-height: pxTorem(58);
+	}
+}

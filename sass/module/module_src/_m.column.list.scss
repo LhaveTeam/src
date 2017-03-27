@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* ============================================================
+ * column list module
+ * 
+============================================================ */
+.jt-page-main-content{
+  .mui-card{ margin: 0; margin-top: pxTorem(10); }
+  .mui-card .mui-table-view .jt-m-column-item:first-child, .mui-card .mui-table-view .mui-table-view-divider:first-child{ border-radius: 0; }
+  .jt-m-column-item{ padding: 0; height: pxTorem(59); line-height: pxTorem(59); }
+  .jt-m-column-item a{ margin: 0; padding: 0 pxTorem(7.5);}
+  .jt-m-column-item a .jt-column-ico{ display: inline-block; float: left; margin-top: pxTorem(20); margin-right: pxTorem(29); width: pxTorem(20); height: pxTorem(20); 
+  background: url(../../../images/subpage/b_safe_icon_sprite.png); background-size: pxTorem(219) pxTorem(114.5); }
+  
+  .mui-navigate-right:after, .mui-push-right:after{ right: 0;}
+  .jt-m-column-item:after{ left: 0; }
+  .jt-m-column-item>a:not(.mui-btn){ font-size: pxTorem(14); }
+  .jt-column-txt{ position: relative; width: auto;}
+  .jt-column-txt .mui-badge{ position: absolute; top:0;right:pxTorem(-10); padding:0; width: pxTorem(5); height: pxTorem(5); border-radius: 50%; text-indent: -9999px; }
+}

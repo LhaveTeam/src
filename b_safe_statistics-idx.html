@@ -24,25 +24,32 @@
     <script src="js/general.config.js"></script>
   </head>
   <body class="global-body jt-global-body">
-    <header class="mui-bar mui-bar-nav">
-        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-        <h1 class="mui-title">统计</h1>
-    </header>
-    
-    <div class="mui-content">
-    	<div id="safe_index_main" class="mui-slider mui-fullscreen g-slider-main">
-    		<div id="safe_index_segctrl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted g-segmented-segctrl">
-    			<div class="mui-scroll">
-    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">上报</a>
-    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">下达</a>
-    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">验收跟踪</a>
-    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">统计</a>
-    				<a class="mui-control-item mui-active" href="javascript:void(0);" data-wid="">巡检计划</a>
-    			</div>
-    		</div>
-    	</div>
+    <div class="mui-content jt-page-main-content">
+      <div class="mui-card jt-column-panel">
+        <div class="mui-card-content">
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell jt-m-column-item">
+              <a class="mui-navigate-right fn-ellipsis">
+                <i class="jt-column-ico jt-safe-stop-ico"></i>
+                <span>停工令</span>
+              </a>
+            </li>
+            <li class="mui-table-view-cell jt-m-column-item">
+              <a class="mui-navigate-right fn-ellipsis">
+                <i class="jt-column-ico jt-safe-fine-ico"></i>
+                <span>罚款记录</span>
+              </a>
+            </li>
+            <li class="mui-table-view-cell jt-m-column-item">
+              <a class="mui-navigate-right fn-ellipsis">
+                <i class="jt-column-ico jt-safe-rect-ico"></i>
+                <span>隐患整改记录</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    
     
   </body>
   <script>

@@ -1,108 +1,94 @@
 <!doctype html>
 <html class="global-html" lang="zh-CN">
-
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit">
     <title>建投APP-安全蓝人版- 统计详情- 整改记录</title>
     <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="LHVE TEAM, www.lhave.com">
-    <meta name="copyright" content="Copyright lhave.com 版权所有">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telphone=no, email=no">
-    <meta name="wap-font-scale" content="no">
-    <link href="css/assets/mui.min.css" rel="stylesheet" type="text/css">
-    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <meta name="description" content=""> 
+    @@include('./tpl.headarea.common.html')
     <link href="css/g.safe.css" rel="stylesheet" type="text/css">
-    <link href="css/b.safe.css" rel="stylesheet" type="text/css">
-    <script id="seajsnode" src="js/sea.js"></script>
-    <script src="js/general.config.js"></script>
+    <link href="css/b.safe.css" rel="stylesheet" type="text/css"> 
+    @@include('./tpl.headarea.common.js.html')
   </head>
-	<body class="global-body jt-global-body jt-grey-bg">
-	<div class="m-form-panel">
-		<!--下拉刷新容器-->
-		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
-			<div class="mui-scroll">
-				<!--数据列表-->
-				<ul class="mui-table-view mui-table-view-chevron safe-statics-det-refresh">
-					
-				</ul>
-			</div>
-		</div>
-	</div>
-	<script>
-    seajs.use([$app.scriptDir + $app.access], function() {
-      mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-      });
-      
-      mui.init({
-        pullRefresh: {
-          container: '#pullrefresh',
-          down: {
-            callback: pulldownRefresh
-          },
-          up: {
-            contentrefresh: '正在加载...',
-            callback: pullupRefresh
-          }
-        }
-      });
-      /**
-       * 下拉刷新具体业务实现
-       */
-      function pulldownRefresh() {
-        setTimeout(function() {
-          var table = document.body.querySelector('.mui-table-view');
-          var cells = document.body.querySelectorAll('.mui-table-view-cell');
-          for (var i = cells.length, len = i + 3; i < len; i++) {
-            var li = document.createElement('li');
-            li.className = 'mui-table-view-cell log-table-view-cell';
-            li.innerHTML = '<a class="log-cell-inner"><span class="log-time">2015-04-23</span><span class="log-text">建筑地基基础工程施工质量验收'+(i+1)+'</span></a>';
-            //下拉刷新，新纪录插到最前面；
-            table.insertBefore(li, table.firstChild);
-          }
-          mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-        }, 1500);
-      }
-      var count = 0;
-      /**
-       * 上拉加载具体业务实现
-       */
-      function pullupRefresh() {
-        setTimeout(function() {
-          mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-          var table = document.body.querySelector('.mui-table-view');
-          var cells = document.body.querySelectorAll('.mui-table-view-cell');
-          for (var i = cells.length, len = i + 20; i < len; i++) {
-            var li = document.createElement('li');
-            li.className = 'mui-table-view-cell log-table-view-cell';
-            
-            li.innerHTML = '<a class="log-cell-inner"><span class="log-time">2015-04-23</span><span class="log-text">建筑地基基础工程施工质量验收建筑地基基础工程施工质量验收'+(i+1)+'</span></a>';
-            table.appendChild(li);
-          }
-        }, 1500);
-      }
-      if (mui.os.plus) {
-        mui.plusReady(function() {
-          setTimeout(function() {
-            mui('#pullrefresh').pullRefresh().pullupLoading();
-          }, 1000);
+  <body class="global-body jt-global-body jt-grey-bg">
+    <div class="m-form-panel">
+      <!--下拉刷新容器-->
+      <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!--数据列表-->
+          <ul class="mui-table-view mui-table-view-chevron safe-statics-det-refresh">
 
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      seajs.use([$app.scriptDir + $app.access], function() {
+        mui('.mui-scroll-wrapper').scroll({
+          deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
         });
-      } else {
-        mui.ready(function() {
-          mui('#pullrefresh').pullRefresh().pullupLoading();
+
+        mui.init({
+          pullRefresh: {
+            container: '#pullrefresh',
+            down: {
+              callback: pulldownRefresh
+            },
+            up: {
+              contentrefresh: '正在加载...',
+              callback: pullupRefresh
+            }
+          }
         });
-      }
-      
-    });
-  </script>
-	</body>
+        /**
+         * 下拉刷新具体业务实现
+         */
+        function pulldownRefresh() {
+          setTimeout(function() {
+            var table = document.body.querySelector('.mui-table-view');
+            var cells = document.body.querySelectorAll('.mui-table-view-cell');
+            for(var i = cells.length, len = i + 3; i < len; i++) {
+              var li = document.createElement('li');
+              li.className = 'mui-table-view-cell log-table-view-cell';
+              li.innerHTML = '<a class="log-cell-inner"><span class="log-time">2015-04-23</span><span class="log-text">建筑地基基础工程施工质量验收' + (i + 1) + '</span></a>';
+              //下拉刷新，新纪录插到最前面；
+              table.insertBefore(li, table.firstChild);
+            }
+            mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+          }, 1500);
+        }
+        var count = 0;
+        /**
+         * 上拉加载具体业务实现
+         */
+        function pullupRefresh() {
+          setTimeout(function() {
+            mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+            var table = document.body.querySelector('.mui-table-view');
+            var cells = document.body.querySelectorAll('.mui-table-view-cell');
+            for(var i = cells.length, len = i + 20; i < len; i++) {
+              var li = document.createElement('li');
+              li.className = 'mui-table-view-cell log-table-view-cell';
+
+              li.innerHTML = '<a class="log-cell-inner"><span class="log-time">2015-04-23</span><span class="log-text">建筑地基基础工程施工质量验收建筑地基基础工程施工质量验收' + (i + 1) + '</span></a>';
+              table.appendChild(li);
+            }
+          }, 1500);
+        }
+        if(mui.os.plus) {
+          mui.plusReady(function() {
+            setTimeout(function() {
+              mui('#pullrefresh').pullRefresh().pullupLoading();
+            }, 1000);
+
+          });
+        } else {
+          mui.ready(function() {
+            mui('#pullrefresh').pullRefresh().pullupLoading();
+          });
+        }
+
+      });
+    </script>
+  </body>
 
 </html>

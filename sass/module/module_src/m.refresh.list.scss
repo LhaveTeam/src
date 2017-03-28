@@ -75,7 +75,7 @@
 		-webkit-box-orient: vertical;
 		margin: 0;
 		padding: 0;
-		height: pxTorem(48);
+		max-height: pxTorem(48);
 		line-height: pxTorem(24);
 		font-size: pxTorem(16);
 		font-weight: $font-weight-base;

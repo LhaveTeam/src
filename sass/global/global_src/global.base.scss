@@ -61,7 +61,11 @@
 	justify-content: center;
 	
 }
-
+.color-disable{
+	background-color: #808080;
+	color: white;
+	
+}
 //边距 
 @function pxToRem2($num){
 	@return $num/75*1rem;

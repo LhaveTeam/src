@@ -7,43 +7,32 @@
     @@include('./tpl.headarea.common.html')
     <link href="css/g.safe.css" rel="stylesheet" type="text/css">
     <link href="css/b.safe.css" rel="stylesheet" type="text/css">
-     @@include('./tpl.headarea.common.js.html')
+    @@include('./tpl.headarea.common.js.html')
   </head>
   <body class="global-body jt-global-body">
-    <div class="mui-bar mui-bar-header-secondary cm-selectorbar">
-  <div class="cm-selector">
-    <ul>
-      <li class="cm-selector-item mui-active">
-        <a href="javascript:void(0);">全部<span class="mui-badge mui-badge-danger">12</span></a>
-      </li>
-      <li class="cm-selector-item">
-        <a href="javascript:void(0);">进行中<span class="mui-badge mui-badge-danger">1</span></a>
-      </li>
-      <li class="cm-selector-item">
-        <a href="javascript:void(0);">已完成<span class="mui-badge mui-badge-default">12</span></a>
-      </li>
-    </ul>
-  </div>
-</div>
+   <header class="mui-bar mui-bar-nav jt-m-page-header-bar">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left m-action-back"></a>
+      <h1 class="mui-title m-page-hd-tit">巡检记录列表</h1>
+    </header> 
 <div id="quality_superior_pullrefresh" class="mui-content mui-scroll-wrapper cm-scrollwrap">
   <div class="mui-scroll">
     <div class="cm-cardview">
-      <section class="mui-card cm-card-item" data-ng-repeat="m in names">
+      <section class="mui-card cm-card-item bg-grey cm-article-item">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
             <h3 class="item-title">1栋号13层梁板钢筋质量巡视检查</h3>
             <article class="mui-table item-subinfo">
-              <div class="mui-table-cell mui-col-xs-6">
+              <div class="mui-table-cell mui-col-xs-9">
                 <section class="m-dates">
-                  <p><i></i>时间：2017-01-19</p>
+                  <p><i></i>起止时间：2017-01-19 至 2017-01-26</p>
                   <div class="m-dates-remind">
-                    <span class="mui-badge mui-badge-inverted mui-badge-danger l-countdown">巡检<b>11</b>天</span>
+                    <p class="m-user-named"><i class="fa fa-user-o"></i>巡检人：顾方超、孙晓梅</p>
                   </div>
                 </section>
               </div>
-              <div class="mui-table-cell mui-col-xs-6">
+              <div class="mui-table-cell mui-col-xs-3">
                 <section class="m-user">
-                  <p class="m-user-named"><i class="fa fa-user-o"></i>发起人：李幕林子</p>
+                  <p class="m-user-named">&nbsp;</p>
                   <p class="m-user-dept">
                     <span class="mui-badge mui-badge-danger">进行中</span>
                   </p>
@@ -53,40 +42,76 @@
           </div>
         </div>
       </section>
-      <section class="mui-card cm-card-item" data-ng-repeat="m in names">
-        <div class="mui-card-content">
-          <div class="mui-card-content-inner">
-            <h3 class="item-title">1栋号13层梁板钢筋质量巡视检查</h3>
-            <article class="mui-table item-subinfo">
-              <div class="mui-table-cell mui-col-xs-6">
-                <section class="m-dates">
-                  <p><i></i>时间：2017-01-19</p>
-                  <div class="m-dates-remind">
-                    <span class="mui-badge mui-badge-inverted mui-badge-danger l-countdown">巡检<b>11</b>天</span>
+      <section class="cm-article-cont bg-grey">
+        <div class="m-article-bd">
+            <p>
+              按照经你局批准的建设项目环境影响（报告书、报告表）
+我单位在×××××（地点）建设的××项目（项目名称）主体工程
+            </p>
+            <div class="b-safe-det-time">
+              <header class="time-tab-hd">
+                  <div class="month-box">
+                    <span>巡检11天</span>
+                    <span>11月</span>
+                    <span>2016</span>
                   </div>
+                  <div class="week-box">
+                    <span>日</span>
+                    <span>一</span>
+                    <span>二</span>
+                    <span>三</span>
+                    <span>四</span>
+                    <span>五</span>
+                    <span>六</span>
+                  </div>
+              </header>
+              <div class="time-tab-bd">
+                <section class="time-cont">
+                   <span>1</span>
+                   <span>2</span>
+                   <span>3</span>
+                   <span>4</span>
+                   <span>5</span>
+                   <span>6</span>
+                   <span>7</span>
+                   <span>8</span>
+                   <span>9</span>
+                   <span>10</span>
+                   <span>11</span>
+                   <span>12</span>
+                   <span>13</span>
+                   <span>14</span>
+                   <span>15</span>
+                   <span>16</span>
+                   <span>17</span>
+                   <span>18</span>
+                   <span>19</span>
+                   <span>20</span>
+                   <span>21</span>
+                   <span>22</span>
+                   <span>23</span>
+                   <span>24</span>
+                   <span>25</span>
+                   <span>26</span>
+                   <span>27</span>
+                   <span>28</span>
+                   <span>29</span>
+                   <span>30</span>
+                   <span>31</span>
                 </section>
+                
+                
               </div>
-              <div class="mui-table-cell mui-col-xs-6">
-                <section class="m-user">
-                  <p class="m-user-named"><i class="fa fa-user-o"></i>发起人：李幕林子</p>
-                  <p class="m-user-dept">
-                    <span class="mui-badge color-disable">已完成</span>
-                  </p>
-                </section>
-              </div>
-            </article>
-          </div>
-        </div>
+            </div>
+          
+          
+        </div> 
       </section>
-    
-    
-    
+       
     </div>
   </div>
 </div>
-    
-    
-  </body>
+ </body>
   <script>
     seajs.use([$app.scriptDir + $app.access],function(){
       mui('.mui-scroll-wrapper').scroll({

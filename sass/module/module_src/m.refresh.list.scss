@@ -145,6 +145,15 @@
 					font-style: $font-style-base;
 				}
 			}
+			.fa-user-o{
+					margin-top: pxTorem(2.5);
+					margin-right: pxTorem(5);
+					font-size: pxTorem(14);
+					font-style: $font-style-base;
+					font-weight: $font-weight-base;
+					vertical-align: top;
+					
+				}
 		}
 		.m-user {
 			padding-left: pxTorem(10);
@@ -158,6 +167,7 @@
 					font-weight: $font-weight-base;
 					vertical-align: top;
 				}
+				
 			}
 			.m-user-dept {
 				margin-top: pxTorem(10);

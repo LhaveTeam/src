@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* ============================================================
+ * 文章详情 模块
+ * 
+============================================================ */
+.cm-article-cont{
+	padding: pxTorem(10) pxTorem(15);
+	line-height: pxTorem(22);
+	font-size: pxTorem(12);
+	color: #333;
+	
+}
+.cm-article-item:after{
+	left: pxTorem(10);
+	right: pxTorem(10);
+	
+}

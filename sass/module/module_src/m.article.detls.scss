@@ -3,7 +3,7 @@
  * 文章详情 模块
  * 
 ============================================================ */
-.cm-article-cont{
+.cm-article-panel{
 	padding: pxTorem(10) pxTorem(15);
 	line-height: pxTorem(22);
 	font-size: pxTorem(12);
@@ -13,5 +13,90 @@
 .cm-article-item:after{
 	left: pxTorem(10);
 	right: pxTorem(10);
+	
+}
+.time-tab-panel{
+	background-color: white;
+	color: #666;
+	font-size: pxTorem(14);
+	
+}
+.time-tab-panel-hd {
+	background-color: #3783D1;
+	border-top-left-radius: pxTorem(4);
+	border-top-right-radius: pxTorem(4);
+	color: white;
+	font-size: pxTorem(12);
+	
+	
+}
+.time-tab-panel-bd{
+    border: 1px solid #E4E4E4;
+	padding: pxTorem(20);
+	border-bottom-left-radius: pxTorem(4);
+	border-bottom-right-radius: pxTorem(4);
+	
+}
+.month-box{
+	display: flex;
+	margin-top: pxTorem(13);
+	padding: 0 pxTorem(15);
+	justify-content:  space-between;
+	
+	
+}
+.month-box span{
+	flex: 1;
+	padding: pxTorem(12) 0;
+	line-height: pxTorem(20);
+	text-align: center;
+	&:last-of-type{
+		text-align: right;
+		
+	}
+	&:first-of-type{
+		text-align: left;
+	}
+}
+.week-box{
+	display: flex;
+	justify-content:  space-between;
+	padding-bottom: pxTorem(6);
+	span{
+		
+		flex: 1;
+		text-align: center;
+		line-height: pxTorem(18);
+		
+	}
+	
+	
+}
+.time-cont{
+	display: flex;
+	flex-wrap: wrap;
+	
+	span{
+		position: relative;
+		line-height: pxTorem(30);
+		text-align: center;
+		width: 14.285714285%;
+		&.active{
+			color: #3783d1;
+			&:after{
+				content: '';
+				display: block;
+				height: pxTorem(2);
+				background-color: #3783d1;
+				position: absolute;
+				left: pxTorem(2);
+				right: pxTorem(2);
+				
+				
+			}
+			
+		}
+	}
+	
 	
 }

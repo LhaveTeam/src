@@ -97,6 +97,9 @@
 				line-height: pxTorem(20);
 				color: #999999;
 				font-size: pxTorem(12);
+				text-overflow: ellipsis;
+			    overflow: hidden;
+			    white-space: nowrap;
 			}
 			.mui-badge {
 				margin: 0;
@@ -156,7 +159,7 @@
 				}
 		}
 		.m-user {
-			padding-left: pxTorem(10);
+			//padding-left: pxTorem(10);
 			.m-user-named {
 				text-align: right;
 				.fa {

@@ -15,7 +15,8 @@
 		
 	}
 	}
-	.m-sel-icon{ background-image: url(../images/subpage/b_safe_icon_sprite.png); background-size: pxTorem(438/2) pxTorem(229/2); }
+	.m-sel-icon{ background-image: url(../images/subpage/b_safe_icon_sprite.png); background-size: pxTorem(219) pxTorem(229/2); }
+	.m-tec-icon{ background-image: url(../images/subpage/b_tec_icon_sprite.png); background-size: pxTorem(219) pxTorem(150); }
 	.input-group{ height: pxTorem(40px); }
 	.textarea-group{ flex: 1; }
 	.textarea-input{ border: none; min-height: pxTorem(123/2); padding: pxTorem(13) 0 0;}
@@ -125,6 +126,11 @@
 		 height: pxTorem(22);
 	}
 	
+	.b-tec-case-icon{
+	  background-position: pxTorem(-10) pxTorem(-10);
+	  width:pxTorem(15);
+	  height: pxTorem(18);
+	}
 	
 	
 	.pojec-desc-box{
@@ -167,4 +173,14 @@
 	.sel-slide-box{ height: pxTorem(60); }
 	
 }
+
+//技术管理-方案列表搜索框css
+.b-tec-case-search-bar{ 
+  padding:pxTorem(10) pxTorem(7.5); width: 100%; height: pxTorem(50); background-color: #f5f4f7;
+  .mui-input-clear{height: pxTorem(30); border-radius: pxTorem(15); border: 1px solid #e2e1e6; background-color: #fff;}
+  .mui-placeholder{ display: inline-block; top: pxTorem(10);height: pxTorem(30); line-height: pxTorem(30); }
+}
+.mui-search.b-tec-case-search-bar:before{ left:pxTorem(15); top:53%;}
+.mui-input-row.b-tec-case-search-bar .mui-icon-clear{ width: pxTorem(20); height: pxTorem(20); top: pxTorem(15); right: pxTorem(15); }
+
 

@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="global-html" lang="zh-CN">
+  <head>
+    <title>建投APP-技术蓝人版-技术管理-方案首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content=""> 
+    @@include('./tpl.headarea.common.html')
+    <link href="css/g.safe.css" rel="stylesheet" type="text/css">
+    <link href="css/b.safe.css" rel="stylesheet" type="text/css"> 
+    @@include('./tpl.headarea.common.js.html')
+  </head>
+  <body class="global-body jt-global-body jt-grey-bg">
+    <div class="mui-content jt-page-main-content">
+      <div class="m-form-panel m-enter-list-panel">
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="mui-navigate-right sel-slide-box">
+                <i class="mui-icon m-tec-icon m-sel-icon b-tec-case-icon"></i>
+                <span>基坑工程</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="mui-navigate-right sel-slide-box">
+                <i class="mui-icon m-tec-icon m-sel-icon b-tec-case-icon"></i>
+                <span>主体结构</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="mui-navigate-right sel-slide-box">
+                <i class="mui-icon m-tec-icon m-sel-icon b-tec-case-icon"></i>
+                <span class="">水电消防</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="mui-table-view m-list-witharrow">
+          <div class="mui-table-view-cell m-list-item">
+            <div class="m-list-form-item-tit-bd">
+              <a href="javascript:;" class="mui-navigate-right sel-slide-box">
+                <i class="mui-icon m-tec-icon m-sel-icon b-tec-case-icon"></i>
+                <span class="">其他</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+  </body>
+  <script>
+    seajs.use([$app.scriptDir + $app.access], function() {
+      mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      });
+    });
+  </script>
+
+</html>

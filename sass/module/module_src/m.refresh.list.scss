@@ -238,3 +238,30 @@
 		}
 	}
 }
+.tec-case-bar{
+  .item-title{
+.mui-btn-outlined{ margin: pxTorem(2) pxTorem(5); padding: 0 pxTorem(5); line-height: pxTorem(18); display: inline-block; border-color: #dd524d; font-size: pxTorem(12); } 
+}
+
+.item-subinfo{
+  .m-dates
+  >span
+  >i{
+    display: inline-block;
+    margin-top: .06667rem;
+    margin-right: .13333rem;
+    width: .37333rem;
+    height: .37333rem;
+    line-height: 0;
+    background: url(../../images/public_icon_clock.png) no-repeat left center;
+    background-size: contain;
+    font-size: 0;
+    text-indent: -9999px;
+    vertical-align: top;
+  }
+  .mui-btn{ padding: 0 pxTorem(5); line-height: pxTorem(18); font-size: pxTorem(12); }
+  .sub-case-dates, .sub-case-user{height: pxTorem(25);}
+  
+}
+}
+

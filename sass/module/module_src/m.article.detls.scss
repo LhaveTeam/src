@@ -3,23 +3,23 @@
  * 文章详情 模块
  * 
 ============================================================ */
-.cm-article-panel{
+.cm-article-panel {
 	padding: pxTorem(10) pxTorem(15);
 	line-height: pxTorem(22);
 	font-size: pxTorem(12);
 	color: #333;
-	
+
 }
-.cm-article-item:after{
+.cm-article-item:after {
 	left: pxTorem(10);
 	right: pxTorem(10);
-	
+
 }
-.time-tab-panel{
+.time-tab-panel {
 	background-color: white;
 	color: #666;
 	font-size: pxTorem(14);
-	
+
 }
 .time-tab-panel-hd {
 	background-color: #3783D1;
@@ -27,63 +27,58 @@
 	border-top-right-radius: pxTorem(4);
 	color: white;
 	font-size: pxTorem(12);
-	
-	
+
 }
-.time-tab-panel-bd{
-    border: 1px solid #E4E4E4;
+.time-tab-panel-bd {
+	border: 1px solid #E4E4E4;
 	padding: pxTorem(20);
 	border-bottom-left-radius: pxTorem(4);
 	border-bottom-right-radius: pxTorem(4);
-	
+
 }
-.month-box{
+.month-box {
 	display: flex;
 	margin-top: pxTorem(13);
 	padding: 0 pxTorem(15);
-	justify-content:  space-between;
-	
-	
+	justify-content: space-between;
+
 }
-.month-box span{
+.month-box span {
 	flex: 1;
 	padding: pxTorem(12) 0;
 	line-height: pxTorem(20);
 	text-align: center;
-	&:last-of-type{
+	&:last-of-type {
 		text-align: right;
-		
+
 	}
-	&:first-of-type{
+	&:first-of-type {
 		text-align: left;
 	}
 }
-.week-box{
+.week-box {
 	display: flex;
-	justify-content:  space-between;
+	justify-content: space-between;
 	padding-bottom: pxTorem(6);
-	span{
-		
+	span {
+
 		flex: 1;
 		text-align: center;
 		line-height: pxTorem(18);
-		
 	}
-	
-	
+
 }
-.time-cont{
+.time-cont {
 	display: flex;
 	flex-wrap: wrap;
-	
-	span{
+	span {
 		position: relative;
 		line-height: pxTorem(30);
 		text-align: center;
 		width: 14.285714285%;
-		&.active{
+		&.active {
 			color: #3783d1;
-			&:after{
+			&:after {
 				content: '';
 				display: block;
 				height: pxTorem(2);
@@ -91,12 +86,98 @@
 				position: absolute;
 				left: pxTorem(2);
 				right: pxTorem(2);
-				
-				
 			}
-			
 		}
 	}
-	
-	
+}
+.logs-sec {
+	padding: 0 pxTorem(15);
+	position: relative;
+	margin-bottom: pxTorem(25);
+}
+.logs-sec-cont {
+	background-color: white;
+	padding: pxTorem(15);
+	margin-top: pxTorem(30);
+	border: 1px solid #E4E4E4;
+	border-radius: 4px;
+	.more-btn {
+		text-align: center;
+		font-size: pxTorem(12);
+		a {
+			color: #999;
+			&:after {
+				content: '';
+				display: inline-block;
+				width: pxTorem(10);
+				height: pxTorem(6);
+				margin-left: pxTorem(6);
+				background: url("../images/subpage/b_safe_icon_sprite.png");
+				background-size: pxTorem(438/2) pxTorem(229/2);
+				background-position: pxTorem(-80) pxTorem(-90);
+			}
+		}
+	}
+}
+.logs-sec-bd {
+	padding-top: pxTorem(15);
+}
+.logs-sec-hd {
+	position: absolute;
+	width: pxTorem(90);
+	height: pxTorem(32.5);
+	top: pxTorem(-16.25);
+	border-top-right-radius: 4px;
+	-webkit-border-top-left-radius: 4px;
+	background-color: #339999;
+	font-size: pxTorem(12);
+	color: white;
+	line-height: pxTorem(32.5);
+	text-align: center;
+}
+.logs-item {
+	padding-bottom: pxTorem(20);
+	.img-box {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.time-box {
+		display: flex;
+		align-items: center;
+	}
+	.icons:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: pxTorem(16);
+		height: pxTorem(16);
+		margin-right: 0.1rem;
+		background: url("../images/subpage/b_safe_icon_sprite.png");
+		background-size: pxTorem(438/2) pxTorem(229/2);
+	}
+	.errow-tips {
+		margin-left: pxTorem(10);
+		color: #993333;
+	}
+	.agree:before {
+		background-position: pxTorem(-153) pxTorem(-51);
+
+	}
+	.errow:before {
+		background-position: pxTorem(-193) pxTorem(-51);
+	}
+	.img-wraper {
+		display: inline-block;
+		width: 33.333333%;
+		height: pxTorem(75);
+		padding: 0.1rem;
+		overflow: hidden;
+		img {
+			width: 100%;
+			margin: 0;
+
+		}
+
+	}
+
 }

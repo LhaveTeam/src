@@ -168,12 +168,6 @@
           </div>
         </footer>
       </section>
-  
-  
-  
-    
-    
-    
     </div>
   </div>
 </div>
@@ -181,7 +175,8 @@
     
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access],function(){
+   $app.controller = 'safe/leader.list';
+    seajs.use($app.entrance, function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });

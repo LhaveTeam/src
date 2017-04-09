@@ -10,7 +10,7 @@
     @@include('./tpl.headarea.common.js.html')
   </head>
   <body class="global-body jt-global-body jt-grey-bg">
-    <div class="mui-content jt-page-main-content">
+    <div class="mui-content jt-page-main-content" style="padding-top:0!important">
       <div class="m-form-panel m-enter-list-panel">
         <section class="mui-table-view m-list-witharrow">
           <div class="mui-table-view-cell m-list-item">
@@ -45,7 +45,8 @@
       </div>
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access], function() {
+    $app.controller = 'safe/statistics.index';
+    seajs.use($app.entrance, function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });

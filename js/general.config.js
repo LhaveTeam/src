@@ -1,52 +1,84 @@
-/* ****** 全局配置 ****** */
-(function(root, $seajs) {
-
-	var $app = root.$app = {
-		version: '1.0.0',
-		basePath: './',
-		scriptDir: './js/',
-		skinDir: './',
-		enableBootstrap: false,
-		access: 'access.js',
-		preferred: '',
-		delayed: '',
-		controller: '',
-		arguments: {},
-		dateTime: new Date(),
-		retUrl: '',
-	};
+(function(root, _seajs) {
+	var $app = root.$app = {};
 	root.$app = $app;
+	$app.version = '1.1.0'
+	$app.basePath = '/';
+	$app.scriptDir = $app.basePath + 'js/';
+	$app.skinDir = $app.basePath + 'themes/';
+	$app.common_module = '';
+	$app.controller = '';
+	$app.arguments = {};
+	$app.dateTime = new Date();
+	$app.retUrl = '';
+	$app.invokedScriptPath = (function() {
+		var __s = $app.scriptDir;
+		if(__s.substr(0, $app.basePath.length) == $app.basePath) {
+			__s = __s.substr($app.basePath.length);
+		}
+		return './' + __s;
+	})();
+	$app.entrance = (function() {
+		return $app.invokedScriptPath + 'access.js';
+	})();
+	//Create XMLHttpRequest Object
+	$app.createXHR = function() {
+		if(typeof XMLHttpRequest != "undefined") {
+			return new XMLHttpRequest();
+		} else if(typeof ActiveXObject != "undefined") {
+			if(typeof arguments.callee.activeXString != "string") {
+				var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"];
+				for(var i = 0, len = versions.length; i < len; i++) {
+					try {
+						new ActiveXObject(versions[i]);
+						arguments.callee.activeXString = versions[i];
+						break;
+					} catch(ex) {}
+				}
+			}
+			return new ActiveXObject(arguments.callee.activeXString);
+		} else {
+			throw new Error("No XHR object available.");
+		}
+	};
 
+	/* ************************************************************ */
 	/* Seajs Configuration */
-	if('undefined' != typeof $seajs) {
-		$seajs.config({
-			base: $app.scriptDir,
+	if('undefined' != typeof _seajs) {
+
+		_seajs.config({
+			base: $app.invokedScriptPath,
 			paths: {
-				'LMODULES': '{MODULES}'
+				'feapply': '{CONTROLLERS}'
 			},
 			alias: {
 				//标准库
-				'es5-shim': '{LIB}/es5-shim.min',
-				'json': '{LIB}/json2',
-				'jquery': '{LIB}/jquery',
+				'json': '{LIB}/json3',
+				'jquery': '{LIB}/jquery.min',
+				'lodash': '{LIB}/lodash.min',
 				'mui': '{LIB}/mui.min',
-				'layer.mobile': '{LIB_DIST}/layer_mobile/layer',
+				'lhave': '{LIB}/lhave',
+				'layer.dialog': '{LIB_PLUGINS}/layer_mobile/layer',
+				'swiper': '{LIB_JQUERY_PLUGINS}/swiper.jquery.min',
+				'jt_app': '{LIB}/jt_app',
 				'pullToRefresh': '{LIB}/mui.pullToRefresh',
 				'pullToRefresh_material': '{LIB}/mui.pullToRefresh.material',
-				'jt_app':'{LIB}/jt_app'
-
+				'mui_zoom': '{LIB}/mui.zoom',
+				'mui_previewimage': '{LIB}/mui.previewimage',
+				'jsPxtorem': '{LIB}/jsPxtorem',
+				'kalendae_standalone': '{LIB_PLUGINS}/kalendae.standalone',
+				'laytpl':'{LIB}/laytpl',
 			},
 			vars: {
 				'LIB': 'library',
-				'LIB_DIST': 'library/dist',
+				'LIB_JQUERY_PLUGINS': 'library/jquery_plugins',
 				'LIB_PLUGINS': 'library/plugins',
-				'MODULES': 'modules'
+				'CONTROLLERS': 'controllers'
 			},
 			preload: [
-				Function.prototype.bind ? '' : 'es5-shim',
-				this.JSON ? '' : 'json',
-				'jquery',
-
+				root.JSON ? '' : 'json',
+				root.jQuery ? '' : 'jquery',
+				root._ ? '' : 'lodash',
+				'lhave'
 			],
 			map: [
 				[/^(.*\.(?:css|js))(.*)$/i, '$1?t=' + (+new Date())]
@@ -58,55 +90,38 @@
 		});
 	}
 
-	return;
 })(window, ('undefined' != typeof seajs ? seajs : undefined));
+/* ============================================================ */
+(function(window) {
+	'use strict';
 
-/*
- * Class.js v1.0
- * @copyright Distributed under the BSD License.
- */
-(function() {
-	"use strict";
-
-	// saving constants
 	var VERSION = '1.0';
 	var ORIGINAL = window.Class;
-	// creating global class variable
 	var Class = window.Class = function(obj) {
 		obj = obj || {};
-		// call initialize if given
 		var constructor = function() {
 			return(this.initialize) ? this.initialize.apply(this, arguments) : self;
 		};
-		// adds implement to the class itself
 		if(obj.implement) {
 			var self = window === this ? copy(constructor.prototype) : this;
 			var imp = obj.implement;
 			remove(obj, 'implement');
 			obj = extend(obj, implement(imp));
 		}
-		// assign prototypes
 		constructor.prototype = copy(obj);
-		// assign correct constructor for correct instanceof comparison
 		constructor.constructor = constructor;
-		// save initial object as parent so it can be called by this.parent
 		constructor._parent = copy(obj);
-		// attaching class properties to constructor
 		for(var i = 0, values = ['extend', 'implement', 'getOptions', 'setOptions']; i < values.length; i++) {
 			constructor[values[i]] = Class[values[i]];
 		}
 		return constructor;
 	};
-	// adding class method extend
 	Class.extend = function(obj) {
 		var self = this;
-		// check if implement is passed through extend
 		if(obj.implement) {
 			this.prototype = extend(this.prototype, implement(obj.implement));
-			// remove implement from obj
 			remove(obj, 'implement');
 		}
-		// check if we should invoke parent when its called within a method
 		for(var key in obj) {
 			obj[key] = typeof obj[key] === 'function' && /parent/.test(obj[key].toString()) ? (function(method, name) {
 				return function() {
@@ -115,42 +130,32 @@
 				};
 			})(obj[key], key) : obj[key]
 		}
-		// assign new parent
 		this._parent = extend(this._parent, obj, true);
-		// assign new prototype
 		this.prototype = extend(this.prototype, obj);
-		// return the class if its assigned
 		return this;
 	};
-	// adding class method implement
 	Class.implement = function(array) {
 		return this.prototype = extend(this.prototype, implement(array));
 	};
-	// gets options from constructor
 	Class.getOptions = function() {
 		return this.prototype.options || {};
 	};
-	// sets options for constructor
 	Class.setOptions = function(options) {
 		return this.prototype.options = extend(this.prototype.options, options);
 	};
-	// preventing conflicts
 	Class.noConflict = function() {
-		// reassign original Class obj to window
 		window.Class = ORIGINAL;
 		return Class;
 	};
-	// returns current running version
 	Class.version = VERSION;
-	// helper for assigning methods to a new prototype
+
 	function copy(obj) {
 		var F = function() {};
 		F.prototype = obj.prototype || obj;
 		return new F();
 	}
-	// insures the removal of a given method name
+
 	function remove(obj, name, safe) {
-		// if save is active we need to copy all attributes over.
 		if(safe) {
 			var safeObj = {};
 			for(var key in obj) {
@@ -161,34 +166,25 @@
 		}
 		return safeObj || obj;
 	}
-	// helper for merging two object with each other
 	function extend(oldObj, newObj, preserve) {
-		// failsave if something goes wrong
 		if(!oldObj || !newObj) return oldObj || newObj || {};
-		// make sure we work with copies
 		oldObj = copy(oldObj);
 		newObj = copy(newObj);
-
 		for(var key in newObj) {
 			if(Object.prototype.toString.call(newObj[key]) === '[object Object]') {
 				extend(oldObj[key], newObj[key]);
 			} else {
-				// if preserve is set to true oldObj will not be overwritten by newObj if
-				// oldObj has already a method key
 				oldObj[key] = (preserve && oldObj[key]) ? oldObj[key] : newObj[key];
 			}
 		}
 		return oldObj;
 	}
-	// helper for implementing other classes or objects
+
 	function implement(array) {
 		var collection = {};
 		for(var i = 0; i < array.length; i++) {
-			// check if a class is implemented and save its prototype
 			if(typeof(array[i]) === 'function') array[i] = array[i].prototype;
-			// safely remove initialize
 			var safe = remove(array[i], 'initialize', true);
-			// we use implement again if array has the apropriate methiod, otherwise we extend
 			if(safe.implement) {
 				collection = implement(safe.implement);
 			} else {
@@ -197,4 +193,4 @@
 		}
 		return collection;
 	}
-})();
+})(window);

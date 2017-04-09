@@ -72,7 +72,7 @@
             <div class="m-list-form-item-tit-bd">
               <a href="javascript:;" class="sel-slide-box">
                 <i class="mui-icon m-sel-icon m-sel-time-icon"></i>
-                <span class="center-text">选择结束日期</span>
+                <input type="text" class="center-text" id="input1" readonly="readonly" placeholder="选择结束日期"></input>
               </a>
             </div>
           </div>
@@ -86,7 +86,8 @@
     </div>
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access], function() {
+    $app.controller = 'safe/safe_plan_pub';
+    seajs.use($app.entrance, function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });

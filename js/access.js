@@ -1,68 +1,88 @@
-define(function(require, exports, module) {
+define('access', function(require, exports, module) {
     
+    var fnGlobalUrl = require[require.toUrl ? 'toUrl' : 'resolve'];
+	window.mui = require('mui') || {};
     window.$ = window.jQuery = require('jquery');
-    window.L = require('{LIB}/lodash') || {};
-		window.mui = require('mui') || {};
-			
+    window.Lo = require('lodash').noConflict();
+    require('lhave');
+    var $window = $(window), $document = $(document);
+	
+	var __layer = window.layer = require('layer.dialog');
+	var __layerCss = 'library/plugins/layer_mobile/need/layer.css';
+	window.layer = __layer;
+	if (fnGlobalUrl) {
+		__layerCss = fnGlobalUrl(__layerCss);
+		__layerCss = '<link href="'+ __layerCss +'" rel="stylesheet" type="text/css" id="layermcss">';
+		if ($('base')[0]) {
+			$('base').before(__layerCss);
+		} else {
+			$('head').append(__layerCss);
+		}
+	}
+    
     /* ************************************************************ */
     /* 配置模块接口，并导入指定的控制模块 */
+   
+   
+//var text = jQuery('#test').html();
+//var m = Lo.template(text, { 'imports': { 'jq': jQuery } });
+//
+//
+//console.log(m({ 'users': ['fred', 'barney','wgd'] }));
+
+   
+   
+// 
+// var compiled = Lo.template('hello <%= user %>!');
+//			console.log(compiled({ 'user': 'fred' }));
     exports.baseToString = function(value) {
+    	
+    	
         return value == null ? '' : (value + '');
+        
     };
     exports.load = function(named) {
         named = exports.baseToString(named);
-        if (!L.isString(named)) {
+        if (!Lo.isString(named)) {
             return;
         } else {
-            if (L.isEmpty(named)) {
+            if (Lo.isEmpty(named)) {
                 return;
             }
         }
         
-        require.async('LMODULES/'+ named +'.js?' + window.$app.version, function(controller) {
-            if (L.isObject(controller) && L.has(controller, "run")) {
+        require.async('controllers/'+ named +'.js?' + window.$app.version, function(controller) {
+            if (Lo.isObject(controller) && Lo.has(controller, "run")) {
                 controller.run();
             }
         });
     };
     exports.loadScript = function(scripts) {
         $.each(scripts, function(n, value) {
-            if (!L.isEmpty(value)) {
+            if (!Lo.isEmpty(value)) {
                 exports.load(value);
             }
         });
     };
     window.$app.load = exports.load;
-    
-	/* 提前加载指定的模块 */
-    if (L.isArray($app.preferred)) {
-        exports.loadScript($app.preferred);
-    } else {
-        $app.preferred = L.trim(exports.baseToString($app.preferred));
-        exports.load($app.preferred);
-    }
-    
-	/* 加载控制器 */
-    $app.controller = exports.baseToString($app.controller);
-    if (!L.isEmpty($app.controller)) {
-        exports.load($app.controller);
-    }
-    
-	/* 延后加载指定的模块 */
-    if (L.isArray($app.delayed)) {
-        exports.loadScript($app.delayed);
-    } else {
-        $app.delayed = L.trim(exports.baseToString($app.delayed));
-        exports.load($app.delayed);
-    }
-    
-    try {
-        if (window.console && window.console.log) {
-            console.log("若将岚海称之为舞台，那未免太过于俗气；\n若将岚海比做是家庭，那又明显缺乏创意。\n对于那些从千军万马中脱颖而出的岚海人来说，\n他们选择的不是一份工作，而是一种生活方式。\n请做好一切心理准备，接触岚海，将可能导致你焕然一新！\n");
-            console.log("请将简历发送至 %c hr@lhave.com（ 邮件标题请以“姓名-应聘XX职位-来自console”命名）", "color:red");
-            console.log("职位介绍：http://www.lhave.com/job/");
-        }
-    } catch (ex) {
-    };
 	
+    /* ************************************************************ */
+    /* 加载指定的公用模块 */
+    if (Lo.isArray($app.common_module)) {
+        exports.loadScript($app.common_module);
+    } else {
+        $app.common_module = Lo.trim(exports.baseToString($app.common_module));
+        exports.load($app.common_module);
+    }
+    
+    /* 加载控制器 */
+    if (Lo.isArray($app.controller)) {
+        exports.loadScript($app.controller);
+    } else {
+		$app.controller = Lo.trim(exports.baseToString($app.controller));
+		if (!Lo.isEmpty($app.controller)) {
+			exports.load($app.controller);
+		}
+    }
+    
 });

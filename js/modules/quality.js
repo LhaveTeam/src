@@ -1,6 +1,5 @@
 define('modules/quality', function(require, exports, module) {
 	"use strict";
-
 	var fnGlobalUrl = require[require.toUrl ? 'toUrl' : 'resolve'];
 	var $ = ('undefined' == typeof window.jQuery ? require('jquery') : window.jQuery);
 	var $window = $(window),
@@ -59,11 +58,9 @@ define('modules/quality', function(require, exports, module) {
 						});
 						$.ready(function() {
 							//循环初始化所有下拉刷新，上拉加载。
-							
-							
-							
+
 							$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
-								
+
 								$(pullRefreshEl).pullToRefresh({
 									down: {
 										callback: function() {
@@ -102,8 +99,6 @@ define('modules/quality', function(require, exports, module) {
 
 						});
 					})(mui);
-					
-					
 
 				}
 

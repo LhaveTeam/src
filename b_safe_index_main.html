@@ -18,18 +18,23 @@
       <div id="safe_index_main" class="mui-slider mui-fullscreen g-slider-main">
         <div id="safe_index_segctrl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted g-segmented-segctrl">
           <div class="mui-scroll">
-            <a class="mui-control-item mui-active" href="#item1mobile" data-wid="quality_superior_main.html">上级部门</a>
-            <a class="mui-control-item" href="#item2mobile" data-wid="quality_approval.html">审核</a>
-            <a class="mui-control-item" href="#item3mobile" data-wid="quality_report.html">上报</a>
-            <a class="mui-control-item" href="#item4mobile" data-wid="quality_assign.html">下达</a>
-            <a class="mui-control-item" href="#item5mobile" data-wid="quality_check.html">验收跟踪</a>
+            <a class="mui-control-item mui-active" href="#item1mobile" data-wid="leader_list.html" data-id="leader_list">上级部门</a>
+            <a class="mui-control-item" href="#item2mobile" data-wid="quality_approval.html"
+              data-id="b_safe_inspection_list"  >审核</a>
+            <a class="mui-control-item" href="#item3mobile" data-wid="quality_report.html" 
+              data-id="b_safe_statistics_index">统计</a>
+            <a class="mui-control-item" href="#item4mobile" data-wid="quality_assign.html" 
+              data-id="b_safe_plan_pub">巡检计划</a>
+              <a class="mui-control-item" href="#item4mobile" data-wid="quality_assign.html" 
+              data-id="b_safe_plan_tempplan_modified_design">验收跟踪</a>
           </div>
         </div>
       </div>
     </div>
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access], function() {
+    $app.controller = 'safe/safe.index.main';
+    seajs.use($app.entrance, function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });

@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="global-html" lang="zh-CN">
+
+  <head>
+    <title>建投APP-安全蓝人版-待回复详情</title>
+    <meta name="keywords" content="">
+    <meta name="description" content=""> @@include('./tpl.headarea.common.html')
+    <link href="css/g.safe.css" rel="stylesheet" type="text/css">
+    <link href="css/b.safe.css" rel="stylesheet" type="text/css"> @@include('./tpl.headarea.common.js.html')
+  </head>
+
+  <body class="global-body jt-global-body">
+    <header class="mui-bar mui-bar-nav jt-m-page-header-bar">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left m-action-back"></a>
+      <h1 class="mui-title m-page-hd-tit">巡检记录列表</h1>
+    </header>
+    <div class="art-state-box  jt-fixed-bottom art-state-btn">
+
+      <a href="javascript:;" class="mui-badge"><i class="mui-icon mui-icon-chatbubble u-icon u-icon-info "></i>回复</a>
+    </div>
+    <div id="quality_superior_pullrefresh" class="mui-content mui-scroll-wrapper cm-scrollwrap bg-white state-article">
+      <div class="mui-scroll">
+        <div class="cm-cardview mb-160">
+          <section class="mui-card cm-card-item">
+            <div class="mui-card-content">
+              <div class="mui-card-content-inner">
+                <h3 class="item-title">2017年第一季度关于集团总部部门中层正职岗位竞
+聘结果的公示</h3>
+                <article class="mui-table item-subinfo">
+                  <div class="mui-table-cell mui-col-xs-6">
+                    <section class="m-dates">
+                      <p><i></i>时间：2017-01-19</p>
+                      <div class="m-dates-remind">
+                        <span class="mui-badge mui-badge-inverted mui-badge-danger l-countdown">剩余<b>11</b>天</span>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="mui-table-cell mui-col-xs-6">
+                    <section class="m-user">
+                      <p class="m-user-named"><i class="fa fa-user-o"></i>发起人：李幕林子</p>
+                      <p class="m-user-dept">
+                        <span class="mui-badge mui-badge-danger">项目管理中心</span>
+                      </p>
+                    </section>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+          <section class="cm-article-panel bg-white">
+            <div class="pannel-article-bd pt-20">
+              <p>
+                根据集团总部机关中层职位竞聘工作安排，集团生产管理部部长、改革发展部部长、团委书记和编辑部主任等4个岗位于近日分三组进行了竞聘，现将竞聘结果公示如下：
+              </p>
+              <p>
+                1.生产管理部部长拟推荐候选人：五公司副总经理杨勇，得分91.5分。
+              </p>
+              <p>
+                2.改革发展部部长拟推荐候选人：集团改革发展部临时负责人闫冬，得分90.7分。
+              </p>
+              <p>
+                3.团委书记拟推荐候选人：集团团委负责人杨瑜，得分94.1分。
+              </p>
+              <p>
+                4.编辑部主任拟推荐候选人：集团党委工作部临时协助负责人朱迎风，得分95分。
+              </p>
+            </div>
+          </section>
+          <div class="art-state-box mui-badge-red mt-40">
+            <a href="javascript:;" class="mui-badge-red"><i class="mui-icon mui-icon-info u-icon u-icon-info "></i>请于 <time>2017-03-20</time>前回复</a>
+          </div>
+          <div class="art-state-box bg-grey mt-40">
+            <a href="javascript:;" class="bg-grey" style="color:#999"><i class="mui-icon mui-icon-info u-icon u-icon-info "></i>请于 <time>2017-03-20</time>前回复</a>
+          </div>
+          <section class="art-footer back-cont">
+            <div class="art-back-bd">
+              <h5 class="mb-20">回复信息：</h5>
+              <p>收到</p>
+            </div>
+            <div class="art-back-footer">
+              <article class="mui-table item-subinfo">
+                <div class="mui-table-cell mui-col-xs-9">
+                  <section class="m-user m-user-horiz mui-clearfix">
+                    <p class="m-user-named mr-10"><i class="fa fa-user-o mr-10"></i>李朝杰</p>
+                    <p class="m-user-dept ml-10">
+                      <span class="mui-badge mui-badge-primary">工程管理员</span>
+                    </p>
+                  </section>
+                </div>
+                <div class="mui-table-cell mui-col-xs-3">
+                  <section class="m-dates">
+                    <p>2017-01-19</p>
+                  </section>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $app.controller = 'safe/b_safe_inspection_detls';
+    seajs.use($app.entrance, function() {
+      mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      });
+    });
+  </script>
+
+</html>

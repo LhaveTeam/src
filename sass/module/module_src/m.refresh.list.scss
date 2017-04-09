@@ -240,6 +240,34 @@
 			}
 		}
 	}
+	
+}
+//列表状态   待回复
+.state-unback{
+	.mui-card-footer{
+		.ftr-status-label{background-color: #F4A85D; color: white;}
+		.ftr-status {
+			.ftr-status-timelimit{ 
+				background-color: #F5ECE7 ;
+				color: #d27b25;
+				};
+			}
+	}	
+		
+	}
+.state-done {
+	.ftr-status-label{
+		background-color: #E6E6E6;
+		color: #999;
+		font-size: pxTorem(14);
+		.u-done-icon{
+			vertical-align: middle;
+		}
+		
+	}
+	.done-time{margin-left: pxTorem(5); font-weight: normal;}
+	
+	
 }
 .tec-case-bar{
   .item-title{

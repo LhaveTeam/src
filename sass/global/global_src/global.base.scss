@@ -68,6 +68,12 @@
 	color: white;
 	
 }
+.jt-fixed-bottom{
+	position: fixed;
+	bottom:0;
+	z-index: 999;
+	
+}
 //边距 
 @function pxToRem2($num){
 	@return $num/75*1rem;
@@ -75,7 +81,7 @@
 }
 //margin外边距离
 $direction: (t,top), (r,right), (b,bottom), (l,left);
-$distance: 5, 10, 15, 20, 30, 40;
+$distance: 5, 10, 15, 20, 30, 40,80,160;
 @each $dirshot, $dir in $direction{
 	@each $dis in $distance {
 		.m#{$dirshot}-#{$dis}{

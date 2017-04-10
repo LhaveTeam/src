@@ -51,25 +51,50 @@ gulp.task('concatscss-comn_safe',function(){
 	.pipe(Plugins.concat($CFG_STYLES.comn_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
-	.pipe(Plugins.debug({title: '创建Css_safe:'}))
+	.pipe(Plugins.debug({title: '创建Css_a_safe:'}))
 	.pipe(gulp.dest($CFG_STYLES.dest))
   .pipe(bsReload({ stream: true }));
 	
 });
-// 安全css
-gulp.task('concatscss-safe',function(){
-	return gulp.src($CFG_STYLES.safe_source)
+//创建黄人版 安全css
+gulp.task('concatscss-a_safe',function(){
+	return gulp.src($CFG_STYLES.a_safe_source)
 	.pipe(Plugins.changed($CFG_STYLES.dest))
 	.pipe(gulp_sass($CFG_STYLES.sassoptions))
-	.pipe(Plugins.concat($CFG_STYLES.safe_file))
+	.pipe(Plugins.concat($CFG_STYLES.a_safe_file))
 	.pipe(gulp.dest($CFG_STYLES.dest))
 	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
-	.pipe(Plugins.debug({title: '创建Css_safe:'}))
+	.pipe(Plugins.debug({title: '创建Css_a_safe:'}))
 	.pipe(gulp.dest($CFG_STYLES.dest))
   .pipe(bsReload({ stream: true }));
 	
 });
-
+//创建蓝人版 安全css
+gulp.task('concatscss-b_safe',function(){
+	return gulp.src($CFG_STYLES.b_safe_source)
+	.pipe(Plugins.changed($CFG_STYLES.dest))
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
+	.pipe(Plugins.concat($CFG_STYLES.b_safe_file))
+	.pipe(gulp.dest($CFG_STYLES.dest))
+	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
+	.pipe(Plugins.debug({title: '创建Css_b_safe:'}))
+	.pipe(gulp.dest($CFG_STYLES.dest))
+  .pipe(bsReload({ stream: true }));
+	
+});
+//创建绿人版 安全css
+gulp.task('concatscss-c_safe',function(){
+	return gulp.src($CFG_STYLES.c_safe_source)
+	.pipe(Plugins.changed($CFG_STYLES.dest))
+	.pipe(gulp_sass($CFG_STYLES.sassoptions))
+	.pipe(Plugins.concat($CFG_STYLES.c_safe_file))
+	.pipe(gulp.dest($CFG_STYLES.dest))
+	.pipe(Plugins.cleanCss($CFG_STYLES.cssMinOptions))
+	.pipe(Plugins.debug({title: '创建Css_c_safe:'}))
+	.pipe(gulp.dest($CFG_STYLES.dest))
+  .pipe(bsReload({ stream: true }));
+	
+});
 
 gulp.task('taskCss', function() {
     var filesArr = [
@@ -159,7 +184,7 @@ gulp.task('taskHtml', function() {
  * 其他操作处理
  * **************************************** */
 gulp.task('build', function(callback) {
-    Plugins.sequence(['clean-css', 'clean-images', 'clean-js', 'clean-html'], ['concatcss-general','concatscss-comn_safe','concatscss-safe','concatcss-index'], ['taskCss', 'taskImages', 'taskJs'], 'taskHtml', callback);
+    Plugins.sequence(['clean-css', 'clean-images', 'clean-js', 'clean-html'], ['concatcss-general','concatscss-comn_safe','concatscss-a_safe','concatscss-b_safe','concatscss-c_safe','concatcss-index'], ['taskCss', 'taskImages', 'taskJs'], 'taskHtml', callback);
 });
 
 //创建本地服务器，并且实时更新页面文件
@@ -168,9 +193,9 @@ gulp.task('browser-sync', ['build'], function() {
 });
 
 gulp.task('default', ['browser-sync'], function() {
-    gulp.watch($CFG.watch.styles, ['taskCss','concatcss-general','concatscss-comn_safe','concatscss-safe','concatcss-index']);
+    gulp.watch($CFG.watch.styles, ['taskCss','concatcss-general','concatscss-comn_safe','concatscss-a_safe','concatscss-b_safe','concatscss-c_safe','concatcss-index']);
     gulp.watch($CFG.watch.images, ['taskImages']);
     gulp.watch($CFG.watch.scripts, ['taskJs']);
     gulp.watch($CFG.watch.html, ['taskHtml']);
-	 gulp.watch($CFG.watch.sass_src, ['taskCss','concatcss-general','concatscss-safe','concatcss-index']);
+	 gulp.watch($CFG.watch.sass_src, ['taskCss','concatcss-general','concatscss-comn_safe','concatscss-a_safe','concatscss-b_safe','concatscss-c_safe','concatcss-index']);
 });

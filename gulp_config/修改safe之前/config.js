@@ -41,13 +41,19 @@ module.exports = {
 		comn_safe_source:[
 			__src +'/sass/safe/g.safe.scss'//安全公共功能scss
 		],
-		safe_source:[
-			__src +'/sass/safe/b.safe.scss',//蓝人版安全功能scss
-			__src +'/sass/safe/a.safe.scss',//黄人版安全功能scss
-			__src +'/sass/safe/c.safe.scss',//绿人版安全功能scss
+		a_safe_source:[
+			__src +'/sass/safe/a.safe.scss'//黄人版安全功能scss
+		],
+		b_safe_source:[
+			__src +'/sass/safe/b.safe.scss'//蓝人版安全功能scss
+		],
+		c_safe_source:[
+			__src +'/sass/safe/c.safe.scss'//绿人版安全功能scss
 		],
 		comn_safe_file:'g.safe.css',
-		safe_file:'safe.css',
+		a_safe_file:'a.safe.css',
+		b_safe_file:'b.safe.css',
+		c_safe_file:'c.safe.css',
         general_source: [__src +'/sass/global/global.scss' ],
         general_file: 'global.css',  
         subpage_file: 'subpage.css', 

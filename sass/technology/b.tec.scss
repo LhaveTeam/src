@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* ============================================================
+ * [safe] 蓝人版安全模块 
+ * 
+============================================================ */
+@import "../global/global_src/_variables.scss";
+@import "../global/global_src/_function.scss";
+@import "../module/module_src/_m.page.header.scss";//header
+@import "../module/module_src/_m.slider.main.scss";//slider
+@import "b_safe_src/safe.leaders.scss";//上级部门
+@import "b_safe_src/safe.check.scss";//审核
+@import "b_safe_src/safe.public.scss";//发布
+@import "b_safe_src/safe.statistics.scss";//统计
+@import "b_safe_src/safe.plan.scss";//巡检计划

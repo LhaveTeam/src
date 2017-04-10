@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* ============================================================
+ * [safe] 安全模块  统计
+ * 
+============================================================ */
+.log-table-view-cell{
+	padding: pxTorem(11) pxTorem(7.5) !important;
+	margin: 0;
+	&:after{ left: 0; }
+	
+}
+.log-cell-inner{
+		
+		line-height: pxTorem(17);
+	 	margin: 0!important;
+	 	padding: 0 !important;
+		color: #333!important;
+		font-size: pxTorem(14);
+		.log-time{ margin-right: pxTorem(5); }
+		.log-text{ word-wrap: break-word; white-space: pre-wrap; }
+		
+	}

@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* ============================================================
+ * [safe] 黄人版安全模块 
+ * 
+============================================================ */
+@import "a_safe_src/safe.leaders.scss";//上级部门
+@import "a_safe_src/safe.check.scss";//审核
+@import "a_safe_src/safe.public.scss";//发布
+@import "a_safe_src/safe.statistics.scss";//统计
+@import "a_safe_src/safe.plan.scss";//巡检计划

@@ -3,12 +3,6 @@
  * [technology] 蓝人版技术模块 
  * 
 ============================================================ */
-@import "../global/global_src/_variables.scss";
-@import "../global/global_src/_function.scss";
-@import "../module/module_src/_m.page.header.scss";//header
-@import "../module/module_src/_m.slider.main.scss";//slider
-@import "b_tec_src/tec.leaders.scss";//上级部门
-@import "b_tec_src/tec.check.scss";//审核
-@import "b_tec_src/tec.public.scss";//发布
-@import "b_tec_src/tec.statistics.scss";//统计
-@import "b_tec_src/tec.plan.scss";//巡检计划
+@import "b_tec_src/tec.scheme.scss";
+
+

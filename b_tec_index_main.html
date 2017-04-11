@@ -5,7 +5,7 @@
     <meta name="keywords" content="">
     <meta name="description" content=""> 
     @@include('./tpl.headarea.common.html')
-    @@include('./tpl.safecommon.css.html')
+    @@include('./tpl.technologycommon.css.html')
     @@include('./tpl.headarea.common.js.html')
   </head>
   <body class="global-body jt-global-body">
@@ -30,7 +30,8 @@
     </div>
   </body>
   <script>
-    seajs.use([$app.scriptDir + $app.access],function(){
+    $app.controller = 'technology/b.tec.index.main';
+    seajs.use($app.entrance, function() {
       mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
       });

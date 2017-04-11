@@ -48,6 +48,16 @@ module.exports = {
 		],
 		comn_safe_file:'g.safe.css',
 		safe_file:'safe.css',
+		comn_technology_source:[
+			__src +'/sass/technology/g.tec.scss'//安全公共功能scss
+		],
+		technology_source:[
+			__src +'/sass/technology/b.tec.scss',//蓝人版安全功能scss
+			__src +'/sass/technology/a.tec.scss',//黄人版安全功能scss
+			__src +'/sass/technology/c.tec.scss',//绿人版安全功能scss
+		],
+		comn_technology_file:'g.technology.css',
+		technology_file:'technology.css',
         general_source: [__src +'/sass/global/global.scss' ],
         general_file: 'global.css',  
         subpage_file: 'subpage.css', 
